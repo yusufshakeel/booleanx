@@ -1,0 +1,44 @@
+{
+  "name": "booleanx",
+  "version": "0.1.0",
+  "description": "Take some input values, pass through some conditions and return boolean output.",
+  "main": "index.js",
+  "scripts": {
+    "precommit": "npm run lint && npm run search-circular-dependencies && npm run search-duplicate-code && npm run test",
+    "lint": "npx eslint -c .eslintrc.json src test",
+    "lint:fix": "npx eslint --fix -c .eslintrc.json src test",
+    "test": "jest -c jest.config.json",
+    "search-circular-dependencies": "npx madge -c ./index.js ./src",
+    "search-duplicate-code": "npx jscpd ./index.js ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yusufshakeel/booleanx.git"
+  },
+  "keywords": [
+    "boolean",
+    "conditional",
+    "check",
+    "javascript",
+    "node"
+  ],
+  "author": "Yusuf Shakeel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yusufshakeel/booleanx/issues"
+  },
+  "homepage": "https://github.com/yusufshakeel/booleanx#readme",
+  "engines": {
+    "node": ">11.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^28.1.0",
+    "jscpd": "^3.4.5",
+    "madge": "^5.0.1",
+    "prettier": "^2.6.2"
+  }
+}
